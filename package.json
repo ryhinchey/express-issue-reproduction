@@ -1,0 +1,18 @@
+{
+  "name": "express-issue-reproduction",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Ryan Hinchey <rlhinchey@gmail.com> (http://twitter.com/ryhinchey)",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "1.0.0-rc.3",
+    "express": "4.17.1",
+    "got": "10.6.0",
+    "puppeteer": "2.1.1"
+  }
+}
