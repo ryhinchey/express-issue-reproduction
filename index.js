@@ -1,11 +1,23 @@
-const express = require('express');
-
+const express = require("express");
+const path = require('path');
 const app = express();
 
-app.use((req, res) => {
-  res.append('Set-Cookie', 'foo=bar');
-  res.append('Set-Cookie', 'bar=foo');
-  res.send('hi')
-})
+app.set('view engine', 'ejs');
 
-app.listen(3001, () => console.log('Server Running...'))
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('/country/:country/:province?', function(req,res){
+  console.log(req.url)
+  var data = {
+    "country": {
+        "country": req.params.country,
+        "province": req.params.province 
+    }
+  }; 
+
+  console.log(data);
+  res.render("country", data);
+});
+
+
+app.listen(3000);
